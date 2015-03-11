@@ -39,4 +39,17 @@ if (theYear === 2015) {
   console.log("Blast from the past");
 }
 
+// data structures
+
+var language = 'javascript';
+var language2 = 'ruby';
+var language3 = 'swift';
+
+var languages = ['javascript','ruby','swift'];
+
+
+console.log(languages[1]);
+console.log(languages[2]);
+console.log(languages[52]);
+
 
