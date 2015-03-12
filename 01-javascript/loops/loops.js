@@ -39,43 +39,48 @@
 
 // console.log('go cody perry');
 
-var userChar = '$'; // money tree
-var spaceChar = ' ';
-var maxRow = 4;
-var row = 1;
-var charCount = 1;
-
-while (row <= maxRow) {
-  var line = spaceChar.repeat(maxRow - row) + userChar.repeat(charCount) + spaceChar.repeat(maxRow - row);
-  console.log(line);
-  row++;
-  charCount += 2;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// var userChar = '$'; // money tree
+// var spaceChar = ' ';
+// var maxRow = 4;
+// var row = 1;
 // var charCount = 1;
 
 // while (row <= maxRow) {
-//   var space = maxRow - row;
-//   console.log(' '.repeat(space) + userChar.repeat(charCount) + ' '.repeat(space));
+//   var line = spaceChar.repeat(maxRow - row) + userChar.repeat(charCount) + spaceChar.repeat(maxRow - row);
+//   console.log(line);
 //   row++;
 //   charCount += 2;
 // }
+
+
+// var count = 0;
+
+// while (count < instruments.length) {
+//   console.log(instruments[count]);
+//   count++;
+// }
+
+// for (assignment; end condition; increment)
+
+var instruments = ['guitar','piano','cajon'];
+
+for (var count = instruments.length; count > 0; count--) {
+  console.log('The number ' + (count) + ' is ' + instruments[count-1]);
+}
+
+// The number 1 elem is guitar
+// The number 2 elem is piano
+// The number 3 elem is cajon
+
+
+
+
+
+
+
+
+
+
+
+
+
