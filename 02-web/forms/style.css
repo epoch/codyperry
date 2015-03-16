@@ -1,0 +1,10 @@
+body {
+  background-color: rgb(146,107,33);
+}
+
+/* css comments */
+
+.container {
+  margin: auto;
+  max-width: 600px;
+}

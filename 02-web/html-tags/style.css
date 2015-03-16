@@ -1,0 +1,56 @@
+* { box-sizing: border-box; }
+
+body {
+  background-color: eggplant;
+}
+
+.menu li {
+  display: inline;
+  list-style-type: none; 
+}
+
+.outer {
+  display: block;
+  width: 400px;
+  box-sizing: border-box;
+  margin: auto;
+  background-color: #ccc;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.outer h1 {
+  text-align: center;
+}
+
+.inner {
+  background-color: #aaa;
+  padding: 10px;
+}
+
+
+
+
+.warning {
+  color: lime;
+}
+
+a:hover {
+  color: yellow;
+}
+
+#desire {
+  font-size: 500%;
+}
+
+p.warning {
+
+}
+
+article p {
+  text-decoration: underline;
+}
+
+article > p {
+
+}

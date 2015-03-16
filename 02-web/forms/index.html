@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>HTML5 Form inputs examples</h1>
+
+    <form action="/home">
+      <p>
+        <label for="query">Things to search for</label>
+        <input type="search" name="query" id="query" placeholder="hotdogs">
+      </p>
+
+      <p>
+        <label for="name">name:</label>
+        <input type="text" name="name" id="name" placeholder="cody perry">
+      </p>
+
+      <p>
+        <label for="age">age:</label>
+        <input type="number" name="age" id="age" placeholder="101">
+      </p>
+
+      <p>
+        <label for="myspace_page">myspace page:</label>
+        <input type="url" name="myspace_page" id="myspace_page">
+      </p>
+
+      <p>
+        <label for="address">Address:</label>
+        <input type="email" name="address" id="address">
+      </p>
+
+      <p>
+        <label for="avator">Avatar:</label>
+        <input type="file" name="avator" id="avatar">
+      </p>
+
+      <p>
+        <label for="letter_home">Letter to home:</label>
+        <textarea name="letter_home" id="letter_home" placeholder="dear mom and dad"></textarea>
+      </p>
+
+      <p>
+        <label for="dob">Date of birth</label>
+        <input type="date" name="dob" id="dob">
+      </p>
+
+      <p>
+        select your vices:
+        <label for="cigars">Cigars</label>
+        <input type="checkbox" id="cigars" name="vices" value="cigars">
+        <label for="wine">wine</label>
+        <input type="checkbox" id="wine" name="vices" value="wine">
+        <label for="heroin">Heroin</label>
+        <input type="checkbox" id="" name="vices" value="heroin">
+      </p>
+
+      <p>
+        select your favourite vice:
+        <label for="fav-vice">Favourite vice</label>
+        <select name="fav-vice" id="fav-vice">
+          <option value="cigars">Cigars</option>
+          <option value="wine">Wine</option>
+          <option value="heroin">Heroin</option>
+        </select>
+      </p>
+
+      <button>Submit</button>
+
+    </form>
+
+  </div>
+  
+</body>
+</html>
