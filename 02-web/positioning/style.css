@@ -1,0 +1,55 @@
+body {
+  background-color: linen;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.hide {
+  display: none;
+  /*visibility: hidden;*/
+}
+
+.showInline {
+  display: inline;
+}
+
+.showBlock {
+  display: block;
+}
+
+.showInlineBlock {
+  display: inline-block;
+  width: 50%;
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+  border: 1px solid blue;
+  text-align: center;
+  margin-bottom: 5px;
+  line-height: 100px;
+}
+
+.position-static {
+  position: static;
+}
+
+.position-fixed {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
