@@ -1,26 +1,43 @@
 body {
   font-family: 'Ubuntu', sans-serif;
   margin: 0 auto;
-  width: 900px;
+  max-width: 900px;
+}
+
+img {
+  float: left;
+  max-width: 100%;
 }
 
 .span-1, .span-2, .span-3 {
   min-height: 100px;
   float: left;
-  margin-right: 10px;
+  margin-right: 1.111111%; /* 10 / 900 = 0.01111111 */
+  width: 98.888888%;
 }
 
 .span-1 {
   background-color: mistyrose;
-  width: 290px;
+  /*width: 32.2222222%;  290 / 900 = 0.322222222 */
 }
 
 .span-2 {
   background-color: plum;
-  width: 590px;
+  /*width: 65.555555%;  590 / 900 = 0.65555555*/
 }
 
 .span-3 {
   background-color: wheat;
-  width: 890px;
+  /*width: 98.888888%;   890 / 900 = 0.988888888*/
 }
+
+@media all and (min-width: 600px) {
+
+  .span-1 {
+    width: 32.2222222%;
+  }
+
+  .span-2 {
+    width: 65.555555%;
+  }
+} 
