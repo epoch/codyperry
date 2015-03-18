@@ -7,7 +7,7 @@
 }
 
 .container div {
-  font-size: 0;
+  font-size: 0; /8 hack to remove space between inline blocks 
   height: 100px;
 }
 
