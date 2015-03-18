@@ -1,0 +1,26 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0 auto;
+  width: 900px;
+}
+
+.span-1, .span-2, .span-3 {
+  min-height: 100px;
+  float: left;
+  margin-right: 10px;
+}
+
+.span-1 {
+  background-color: mistyrose;
+  width: 290px;
+}
+
+.span-2 {
+  background-color: plum;
+  width: 590px;
+}
+
+.span-3 {
+  background-color: wheat;
+  width: 890px;
+}

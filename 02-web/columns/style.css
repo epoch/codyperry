@@ -1,0 +1,24 @@
+* { box-sizing: border-box; }
+
+.container {
+  width: 900px;
+  background-color: pink;
+  margin: 0 auto;
+}
+
+.container div {
+  font-size: 0;
+  height: 100px;
+}
+
+.container div:first-child {
+  display: inline-block;
+  width: 50%;
+  background-color: lime;
+}
+
+.container div:last-child {
+  display: inline-block;
+  width: 50%;
+  background-color: plum;
+};
