@@ -1,0 +1,44 @@
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+#banner p { 
+  text-align: center;
+}
+
+header {
+  background-color: plum;  
+}
+
+.main-content {
+  display: inline-block;
+  width: 70%;
+  background-color: linen;
+  vertical-align: top;
+}
+
+.main-content article footer {
+  border-top: 1px solid gray;
+  margin-top: 2em;
+  border-bottom: 4px solid gray;
+}
+
+.sidebar {
+  display: inline-block;
+  width: 30%;
+  background-color: yellow;
+  vertical-align: top;
+}
+
+/*main section {
+  float: left;
+  width: 50%;
+}
+*/
+
+#main-footer {
+  background-color: palegreen;
+  /*clear: left;*/
+}
+
