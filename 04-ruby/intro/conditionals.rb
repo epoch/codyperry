@@ -14,7 +14,7 @@ if person != 'wally'
   puts "where's wally"
 end
 
-puts "where is wally" if person != "wally"
+puts "where is wally" unless person == "wally"
 
 # switch / case
 
