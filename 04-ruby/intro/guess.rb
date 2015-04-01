@@ -1,7 +1,13 @@
 secret = Random.rand(10) + 1
 
-print "guess a number between 1 - 10: "
-guess = gets.chomp.to_i
+
+def read_guess()
+  print "guess a number between 1 - 10: "
+  gets.chomp.to_i
+end
+
+
+guess = read_guess()
 
 while guess != secret
 
@@ -11,8 +17,7 @@ while guess != secret
     puts "guess lower"
   end
 
-  print "guess a number between 1 - 10: "
-  guess = gets.chomp.to_i  
+  guess = read_guess()
 
 end
 
