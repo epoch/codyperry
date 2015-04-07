@@ -2,6 +2,9 @@
 
 <% @rows.each do |row| %>
   <p><%= row['name'] %></p>
+  <img src="<%= row['image_url'] %>" alt="">
+  <a href="/dishes/<%= row['id'] %>/edit">edit</a>
+  <a href="/dishes/<%= row['id'] %>/delete">delete</a>
 <% end %>
 
 <a href="/dishes/new">New Dish</a>
