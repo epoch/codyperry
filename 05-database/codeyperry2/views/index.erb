@@ -1,0 +1,27 @@
+<h1>cody perry</h1>
+<ul id="students">
+  
+</ul>
+
+<script>
+  
+  var options = {
+    url: '/api/students',
+    dataType: 'json'
+  }
+
+  var hooray = function(students) {
+
+      var $students = $('#students');
+
+      for(var i=0; i<students.length; i++) {
+        var $li = $('<li>').html(students[i]);
+        $students.append($li);
+      }
+  };
+
+  $.ajax(options).done(hooray); // make the call
+
+
+
+</script>
