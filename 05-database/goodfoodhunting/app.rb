@@ -3,9 +3,15 @@ require 'sinatra/reloader'
 require 'pg' # for postgresql database
 require 'pry'
 
+require_relative 'config'
+require_relative 'dish'
+
+after do
+  ActiveRecord::Base.connection.close
+end
+
 get '/' do
-  sql = 'SELECT * FROM dishes order by name;'
-  @rows = run_sql(sql)
+  @dishes = Dish.all
   erb :index
 end
 
@@ -22,33 +28,46 @@ end
 
 # show edit form
 get '/dishes/:id/edit' do
-  sql = "SELECT * FROM dishes WHERE id = #{ params[:id] }"
-  rows = run_sql(sql)
-  @dish = rows[0]
+  # sql = "SELECT * FROM dishes WHERE id = #{ params[:id] }"
+  # rows = run_sql(sql)
+  # @dish = rows[0]
+  @dish = Dish.find(params[:id])
   erb :edit
 end
 
 # create new dish  
 post '/dishes' do
-  sql = "INSERT INTO dishes (name,image_url) VALUES ('#{ params['name'] }', '#{ params['image_url']}')"
-  run_sql(sql)
+  Dish.create(name: params['name'], image_url: params['image_url'])
   redirect to '/'
 end
 
 # update existing dish
-post '/dishes/:id' do
-  sql = "UPDATE dishes SET name='#{ params[:name] }', image_url='#{ params[:image_url] }' WHERE id = #{ params[:id] };"
-  run_sql(sql)
+put '/dishes/:id' do
+  # sql = "UPDATE dishes SET name='#{ params[:name] }', image_url='#{ params[:image_url] }' WHERE id = #{ params[:id] };"
+  # run_sql(sql)
+  dish = Dish.find(params[:id])
+  dish.name = params[:name]
+  dish.image_url = params[:image_url]
+  dish.save
+
+  # dish.update name: params[:name], image_url: params[:image_url]
+
   redirect to '/'
 end
 
 # delete a dish
-get '/dishes/:id/delete' do
-  sql = "DELETE FROM dishes WHERE id = #{ params[:id] }"
-  run_sql(sql)
+delete '/dishes/:id/delete' do
+  # sql = "DELETE FROM dishes WHERE id = #{ params[:id] }"
+  # run_sql(sql)
+
+  # find the object I want to delete
+  dish = Dish.find params[:id]
+
+  # call delete on the object
+  dish.delete
+
   redirect to '/'
 end
-
 
 def run_sql(sql)
   db = PG.connect(:dbname => 'goodfoodhunting')

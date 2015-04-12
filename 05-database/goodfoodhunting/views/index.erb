@@ -1,10 +1,14 @@
 <h1>Good food hunting</h1>
 
-<% @rows.each do |row| %>
-  <p><%= row['name'] %></p>
-  <img src="<%= row['image_url'] %>" alt="">
-  <a href="/dishes/<%= row['id'] %>/edit">edit</a>
-  <a href="/dishes/<%= row['id'] %>/delete">delete</a>
+<% @dishes.each do |dish| %>
+  <p><%= dish.name %></p>
+  <img src="<%= dish.image_url %>" alt="">
+  <a href="/dishes/<%= dish.id %>/edit">edit</a>
+
+  <form action="/dishes/<%= dish.id %>/delete" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>delete</button>
+  </form>
 <% end %>
 
 <a href="/dishes/new">New Dish</a>
