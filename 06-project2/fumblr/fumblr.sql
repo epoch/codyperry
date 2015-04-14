@@ -18,3 +18,11 @@ CREATE TABLE categories (
 ALTER TABLE posts ADD category_id INTEGER;
 
 ALTER TABLE posts DROP category;
+
+
+CREATE TABLE users (
+  id SERIAL4 PRIMARY KEY,
+  email VARCHAR(200),
+  password_digest VARCHAR(300)
+);
+

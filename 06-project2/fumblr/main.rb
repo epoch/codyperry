@@ -2,6 +2,9 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'active_record'
 require 'pry'
+require 'bcrypt'
+
+enable :sessions
 
 # database config
 ActiveRecord::Base.establish_connection(
@@ -19,10 +22,13 @@ class Post < ActiveRecord::Base
   belongs_to :category # singular because belongs to means belongs to one
 end
 
+class User < ActiveRecord::Base
+  has_secure_password
+end
+
 class Category < ActiveRecord::Base
   has_many :posts # plural
 end
-
 
 before do
   @categories = Category.all
@@ -32,14 +38,52 @@ after do
   ActiveRecord::Base.connection.close
 end
 
+get '/session/new' do
+  erb :login
+end
+
+helpers do 
+  def logged_in?
+    !!current_user # trick to return boolean
+  end
+
+  def current_user
+    User.find_by(id: session[:user_id])
+  end
+end
+
+post '/session' do
+  @user = User.where(email: params[:email]).first
+  # @user = User.find_by(email: params[:email])
+
+  if @user && @user.authenticate(params[:password])
+    session[:user_id] = @user.id
+    # correct password
+    redirect to '/'
+  else
+    # incorrect email or password
+    erb :login
+  end
+end
+
+delete '/session' do
+  session[:user_id] = nil
+  redirect to '/'
+end
+
 get '/' do
   @posts = Post.all
   erb :index
 end
 
 get '/posts/new' do
+  redirect to '/session/new' unless current_user
   erb :new
 end
+
+get '/posts/:id' do
+end
+
 
 post '/posts' do
   post = Post.new

@@ -5,8 +5,24 @@
   <title>Hello World</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
   <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/application.js"></script>
 </head>
 <body>
+  <% if logged_in? %>
+
+    <p>logged in as <%= current_user.email %></p>
+    <p>
+      <form action="/session" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>logout</button>
+      </form>
+    </p>
+
+  <% else %>
+
+    <a href="/session/new">login</a>
+    
+  <% end %>
 
   <ul>
     <% @categories.each do |category| %>
