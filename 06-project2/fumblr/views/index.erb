@@ -1,0 +1,39 @@
+<h1>hello world</h1>
+
+<a href="/posts/new">new post</a>
+
+<form id="new-post-form" action="/posts" method="post">
+  <p><input type="text" id="title"></p>
+  <p><textarea name="" id="" cols="30" rows="3"></textarea></p>
+  <button>new post</button>
+</form>
+
+<% @posts.each do |post| %>
+  <p><%= post.title %></p>
+<% end %>
+
+<script>
+
+  var createPost = function(event) {
+    event.preventDefault();
+    console.log('creating post....');
+
+    $.ajax({
+      url: '/api/posts',
+      method: 'post',
+      data: { title: $('#title').val() } // arguments
+    }).done(function(returnedData) {
+      
+      $('body').append('<p>' + returnedData.title +'</p>')
+
+    }).fail(function() {
+      
+    });
+
+  }; // end createPost
+
+  $('#new-post-form').on('submit', createPost);  
+
+</script>
+
+
