@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Hello World</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel='stylesheet' href='/stylesheets/main.css'>
+
   <script src="/javascripts/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="/javascripts/application.js"></script>
 </head>
 <body>
+
   <% if logged_in? %>
 
     <p>logged in as <%= current_user.email %></p>
@@ -24,12 +29,22 @@
     
   <% end %>
 
-  <ul>
-    <% @categories.each do |category| %>
-      <li><%= category.name %></li>
-    <% end %>
-  </ul>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <ul>
+          <% @categories.each do |category| %>
+            <li><%= category.name %></li>
+          <% end %>
+        </ul>        
+      </div>
+      
+      <div class="col-md-9">
+        <%= yield %>  
+      </div>
+    </div>
+  </div>
 
-  <%= yield %>
+
 
 </body>
