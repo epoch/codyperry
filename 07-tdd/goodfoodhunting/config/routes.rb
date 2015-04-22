@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :dishes
 
           # controller # action
-  get '/' => 'pages#index'
+  get '/' => 'pages#index', :as => :root
   get '/about' => 'pages#about'
 
   # # get show form
