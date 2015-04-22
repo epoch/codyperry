@@ -3,7 +3,7 @@
 <% @dishes.each do |dish| %>
 
   <p>
-    <%= dish.title %> <a href="/dishes/<%= dish.id%>/edit">edit</a>
+    <%= dish.title %> <%= link_to 'edit', edit_dish_path(dish) %>
 
     <form action="/dishes/<%= dish.id %>" method="post">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">    
