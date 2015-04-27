@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>profile list</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div id="container">
+  
+  </div>
+
+  <script id="profile-item-template" type="text/x-underscore-template">
+    <div class="profile-item">
+      <div class="content">
+        <img src="{{ image_url }}" alt="real picture">
+        <h2>{{ username }}</h2>
+        <p>{{ blurp }}</p>
+        <p>number of flirts: {{ flirt }}</p>
+      </div>
+    </div>    
+  </script>
+
+  <script src="jquery.js"></script>
+  <script src="underscore.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
