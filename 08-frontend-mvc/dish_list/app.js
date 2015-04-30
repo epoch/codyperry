@@ -5,27 +5,7 @@ _.templateSettings = {
 //-------------------------------
 
 var Dish = Backbone.Model.extend({
-  defaults: function() {
-    this.set('title', this.randDish());
-  },
-  randDish: function() {
-    var names = "cake pudding bourbon muffin beer cheesy".split(' ')
-    return _.sample(names, 2).join(' ');
-  }
 });
-
-var dishes = [];
-
-dishes.push(new Dish({
-  title: 'cakepudding',
-  starCount: 5
-}));
-
-dishes.push(new Dish({
-  title: 'bourbon pancakes',
-  starCount: 2
-}));
-
 
 var DishItemView = Backbone.View.extend({
   events: {
@@ -37,7 +17,6 @@ var DishItemView = Backbone.View.extend({
   },
   showDetail: function(event) {
     event.preventDefault();
-    router.navigate('dishes/0', true);
   },
   addStar: function() {
     var count =  this.model.get('starCount') + 1;
