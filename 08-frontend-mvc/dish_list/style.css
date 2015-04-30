@@ -1,0 +1,46 @@
+* { box-sizing: border-box; padding: 0; margin: 0;}
+
+body {
+  background-color: #f0f0f0;
+  font-family: arial;
+  margin-top: 1em;
+}
+
+#container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.dish-item {
+  position: relative;
+  background-color: #404040;
+  float: left;
+  width: 20%;
+  margin-right: 2%;
+}
+
+.dish-item > img {
+  max-width: 100%;
+}
+.content > h2 > a {
+  color: #c6e17e;
+}
+.content > h4 {
+  color: #bbb;
+}
+.content > p {
+  color: gray;
+}
+.star {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+
+
