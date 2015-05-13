@@ -1,7 +1,25 @@
+<%= form_for @dish do |f| %>
 
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> 
+<p>
   <label for="">title</label>
-  <input type="text" name="title" value="<%= @dish.title %>">
+  <%= f.text_field :title %>
+</p>
+<p>
+  <label for="">upload file</label>
+  <%= f.file_field :photo %>
+</p>
+<p>
+  <label for="">remote photo url</label>
+  <%= f.text_field :remote_photo_url %>
+</p>
 
-  <label for="">image url</label>
-  <input type="text" name="image_url" value="<%= @dish.image_url %>">
+
+<p>
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+</p>
+<p>
+  <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
+</p>
+  <%= f.submit %>
+<% end %>

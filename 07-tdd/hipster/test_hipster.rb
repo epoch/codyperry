@@ -19,7 +19,8 @@ describe Hipster, "minitest syntax reference" do
   end
 
   it '#walk?' do
-    skip "I prefer to skip"
+    skip 
+    # hipster.walk?.must_equal false
   end
 
   it '#labels' do

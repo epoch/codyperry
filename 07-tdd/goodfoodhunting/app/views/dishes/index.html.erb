@@ -2,6 +2,15 @@
 
 <% @dishes.each do |dish| %>
 
-  <p><%= dish.title %></p>
+  <p>
+    <%= link_to dish.title, dish_path(dish) %> <br>
+    <%= link_to 'edit', edit_dish_path(dish) %>
+
+    <%= form_for dish, :method => :delete do |f| %>
+      <button>Delete</button>
+    <% end %>
+  </p>
 
 <% end %>
+
+<%= link_to 'dishes', '/dishes' %>

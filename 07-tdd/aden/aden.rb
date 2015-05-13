@@ -1,13 +1,14 @@
 class Aden
 
   def talk(message)
-    if yelling?(message)
+    case
+    when yelling?(message)
       "woah chill out"
-    elsif question?(message)
+    when question?(message)
       "sure"
     else
       "whatever"
-    end
+    end      
   end
 
   def yelling?(message)

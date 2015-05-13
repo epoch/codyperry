@@ -8,6 +8,15 @@
 </head>
 <body>
 
+<% if logged_in? %>
+  logged in as <%= current_user.email %>
+  <%= form_tag '/logout', :method => :delete do %>
+    <button>logout</button>
+  <% end %>
+<% else %>
+  <%= link_to('login', login_path) %>
+<% end %>
+
 <%= link_to 'dishes', root_path %>  
 
 <%= yield %>
