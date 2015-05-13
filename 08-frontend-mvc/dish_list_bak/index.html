@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dish list</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div id="container">   
+    <div class="dish-item new-dish-box">
+      <h1>+</h1>
+    </div> 
+  </div>
+
+  <script id="dish-item-template" type="text/x-underscore-template">   
+    <div class="dish-item">
+      <img src="{{ image_url }}" alt="">
+      <div class="info">
+        <h2>{{ title }}</h2>
+        <h4>at {{ venue }}</h4>
+        <p>{{ star_count }} stars</p>        
+      </div>
+      <span class="star">&#9733;</span>
+    </div>   
+  </script>
+
+  <script src="jquery.js"></script>
+  <script src="underscore.js"></script>
+  <script src="backbone.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

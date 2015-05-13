@@ -1,0 +1,28 @@
+$primary-color: plum;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+body {
+  background-color: $primary-color;
+}
+
+.todo-item {
+  h2 {
+    background-color: lighten(blue, 20%);
+    @include border-radius(10px);
+  }
+
+  p {
+    background-color: tomato;
+    @include border-radius(20px);
+  }
+}
+
+
+
+

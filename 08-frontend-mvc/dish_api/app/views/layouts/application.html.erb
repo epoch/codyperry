@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>dish list</title>
-  <link rel="stylesheet" href="style.css">
+  <title>DishApi</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
+
   <button id="magic-btn">Add dish</button>
   <div id="container">
   </div>
@@ -22,13 +24,7 @@
     </div>  
   </script>
 
+  <script></script>
 
-  <script src="jquery.js"></script>
-  <script src="underscore.js"></script>
-  <script src="backbone.js"></script>
-  <script src="dish.js"></script>
-  <script src="dishes.js"></script>
-  <script src="dish_view.js"></script>
-  <script src="app.js"></script>
 </body>
 </html>

@@ -7,7 +7,6 @@ var DishItemView = Backbone.View.extend({
     this.listenTo(this.model, 'change', this.render);
   },
   showDetail: function(event) {
-    event.preventDefault();
   },
   addStar: function() {
     var count =  this.model.get('starCount') + 1;

@@ -1,0 +1,17 @@
+body {
+  background-color: plum; }
+
+.todo-item h2 {
+  background-color: #6666ff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px; }
+.todo-item p {
+  background-color: tomato;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px; }
+
+/*# sourceMappingURL=style.css.map */
